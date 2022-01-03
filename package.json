@@ -1,0 +1,27 @@
+{
+  "name": "selendra-bot",
+  "version": "1.0.0",
+  "description": "selendra bot for faucet and block detail",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/selendra/selendra-bot.git"
+  },
+  "author": "nath.selendra@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/selendra/selendra-bot/issues"
+  },
+  "homepage": "https://github.com/selendra/selendra-bot#readme",
+  "dependencies": {
+    "@polkadot/util-crypto": "^8.2.2",
+    "@polkadot/api": "^6.12.1",
+    "dotenv": "^10.0.0",
+    "ethers": "^5.5.2",
+    "sqlite3": "^5.0.2",
+    "telegraf": "^4.5.2"
+  }
+}
