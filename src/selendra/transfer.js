@@ -41,10 +41,10 @@ module.exports.ethTransfer = async function transfer(bot, user_id, address) {
                 bot.telegram.sendMessage(user_id, "balance have seen", {})
             }catch(e){
                 console.log(e)
-                bot.telegram.sendMessage(user_id, "Sorry problem occured, please come back at later date", {})
+                bot.telegram.sendMessage(user_id, "Sorry problem occured, please come back later", {})
             }
         }else{
-            bot.telegram.sendMessage(user_id, "Please come back at later date", {})
+            bot.telegram.sendMessage(user_id, "Please come back later. Normally, you need 24 hours before you can claim again.", {})
         }
     } 
     else {
@@ -61,19 +61,19 @@ module.exports.subTransfer = async function transfer(bot, user_id, address) {
         if (now - last > 24 * 1000 * 60 * 60) {
             db.update(user_id, now);
             try{
-                await sendSubtrateToken(address, 10);
+                await sendSubtrateToken(address, 1000);
                 bot.telegram.sendMessage(user_id, "balance have seen", {})
             }catch(e){
                 console.log(e)
-                bot.telegram.sendMessage(user_id, "Sorry problem occured, please come back at later date", {})
+                bot.telegram.sendMessage(user_id, "Sorry problem occured, please come back later", {})
             }
         }else{
-            bot.telegram.sendMessage(user_id, "Please come back at later date", {})
+            bot.telegram.sendMessage(user_id, "Please come back later. Normally, you need 24 hours before you can claim again.", {})
         }
     } 
     else {
         db.insert(user_id, now);
-        await sendSubtrateToken(address, 10);
+        await sendSubtrateToken(address, 1000);
         bot.telegram.sendMessage(user_id, "balance have seen", {}) 
     }
 }

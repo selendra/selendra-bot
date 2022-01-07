@@ -25,11 +25,11 @@ bot.action('faucet', ctx => {
 })
 
 bot.action('evm-address', async (ctx, next) => {
-    bot.telegram.sendMessage(ctx.chat.id, "send me evm address format: 0x...", {})
+    bot.telegram.sendMessage(ctx.chat.id, "Send me EVM address format: 0xx...", {})
 })
 
 bot.action('substrate-address', async (ctx, next) => {
-    bot.telegram.sendMessage(ctx.chat.id, "send me substrate address format: 5x...", {})
+    bot.telegram.sendMessage(ctx.chat.id, "Send me Substrate address format: 5xx...", {})
 })
 
 bot.hears(/0(.+)/, async (ctx, next) => {
