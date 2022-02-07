@@ -11,7 +11,7 @@ function isvalidEvmAddress(address) {
 }
 
 function isvalidSubstrateAddress(address) {
-    const check = UtilCrypto.checkAddress(address, 42);
+    const check = UtilCrypto.checkAddress(address, 972);
     if (check[0]) {
         return true;
     } else {

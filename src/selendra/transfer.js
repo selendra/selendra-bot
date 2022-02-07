@@ -61,7 +61,7 @@ module.exports.subTransfer = async function transfer(bot, user_id, address) {
         if (now - last > 24 * 1000 * 60 * 60) {
             db.update(user_id, now);
             try{
-                await sendSubtrateToken(address, 1000);
+                await sendSubtrateToken(address, 10);
                 bot.telegram.sendMessage(user_id, "balance have seen", {})
             }catch(e){
                 console.log(e)
@@ -73,7 +73,7 @@ module.exports.subTransfer = async function transfer(bot, user_id, address) {
     } 
     else {
         db.insert(user_id, now);
-        await sendSubtrateToken(address, 1000);
+        await sendSubtrateToken(address, 10);
         bot.telegram.sendMessage(user_id, "balance have seen", {}) 
     }
 }
